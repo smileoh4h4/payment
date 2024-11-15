@@ -28,19 +28,6 @@
       color: #555;
       font-size: 18px;
     }
-    .address {
-      font-size: 16px;
-      color: #333;
-      background-color: #f0f0f0;
-      padding: 10px;
-      border-radius: 5px;
-      word-wrap: break-word;
-    }
-    .amount {
-      font-size: 20px;
-      font-weight: bold;
-      margin: 20px 0;
-    }
     .btn {
       display: inline-block;
       padding: 10px 20px;
@@ -58,25 +45,33 @@
 <body>
   <div class="container">
     <h1>支付頁面</h1>
-    <p>請使用以下地址進行支付：</p>
+    <p>請點擊以下按鈕進行支付：</p>
 
-    <!-- 比特幣地址 -->
-    <div class="address">
-      <p><strong>比特幣地址：</strong><br> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
-    </div>
-
-    <!-- 以太坊地址 -->
-    <div class="address">
-      <p><strong>以太坊地址：</strong><br> 0x32Be343B94f860124dC4fEe278FDCBD38C102D88</p>
-    </div>
-
-    <p class="amount">支付金額：15 U</p>
-
-    <!-- 可選擇支付鏈接的按鈕 -->
-    <a class="btn" href="bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">支付比特幣</a><br><br>
-    <a class="btn" href="ethereum:0x32Be343B94f860124dC4fEe278FDCBD38C102D88">支付以太坊</a>
-    
-    <p>完成支付後，請返回並聯繫我們以確認付款。</p>
+    <!-- 按鈕，會隨機跳轉到支付頁面 -->
+    <a href="#" class="btn" onclick="redirectToRandomAddress()">選擇支付方式</a>
   </div>
+
+  <script>
+    // 設定所有的地址
+    const addresses = [
+      '0x53920020fB41Be37C67410818285Ee50fB67EabC', // 第一個
+      '0x95fF4f09DD3612340995E2e4EE864C8b03AA5610', // 第二個
+      '0x44D6c80594e2D76dd3bb0B808f0279dbE0aCafB9', // 第三個
+      '0x013d82A4438F64670041e5144A26519935ce2174', // 第四個
+      '0x744d9Ec5f351F24C1Af45EFee6bfb14Ce986a8C5', // 第五個
+      '0x046DE986a6f6dD9d1c86Ca22DB4E545f45b21603', // 第六個
+      '0x198C9a731DBB6241Cd44CbF37DB697B620358332', // 第七個
+      '0xEDcaB78CA379195f26e6D328ab820ccCFB56E935'  // 第八個
+    ];
+
+    // 隨機選擇一個地址
+    function redirectToRandomAddress() {
+      const randomIndex = Math.floor(Math.random() * addresses.length);
+      const selectedAddress = addresses[randomIndex];
+
+      // 跳轉到支付頁面 (這裡假設跳轉到以太坊或 BNB Chain 錢包地址頁面)
+      window.location.href = `https://www.bscscan.com/address/${selectedAddress}`;
+    }
+  </script>
 </body>
 </html>
