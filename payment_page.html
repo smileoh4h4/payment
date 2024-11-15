@@ -7,9 +7,9 @@
     <style>
         /* 基本頁面設置 */
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f7fa;
-            color: #333;
+            font-family: 'Arial', sans-serif;
+            background-color: #ecf0f1;
+            color: #34495e;
             margin: 0;
             padding: 0;
         }
@@ -17,61 +17,55 @@
         /* 設置頁面內容區域 */
         .container {
             width: 80%;
-            max-width: 800px;
+            max-width: 700px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px;
             background-color: #fff;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
         }
 
         /* 標題樣式 */
         h1 {
             color: #2c3e50;
-            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2em;
         }
 
-        /* 設置金額顯示區域 */
+        /* 顯示金額 */
         .amount {
             font-size: 1.5em;
             font-weight: bold;
             color: #e74c3c;
-            margin-top: 20px;
-            text-align: center;
+            margin: 20px 0;
         }
 
         /* 設置錢包地址區域 */
         .wallet {
-            font-size: 1.2em;
-            margin-top: 30px;
-            text-align: center;
-            padding: 10px;
-            background-color: #ecf0f1;
-            border-radius: 8px;
-            word-wrap: break-word;
-        }
-
-        /* 設置支付提示 */
-        .note {
             font-size: 1.1em;
+            color: #34495e;
+            background-color: #ecf0f1;
+            padding: 15px;
             margin-top: 20px;
-            color: #7f8c8d;
-            text-align: center;
+            border-radius: 10px;
+            word-wrap: break-word;
+            display: inline-block;
+            width: 100%;
         }
 
-        /* 設置底部 */
-        .footer {
-            margin-top: 40px;
-            text-align: center;
+        /* 支付提示 */
+        .note {
             font-size: 1em;
-            color: #95a5a6;
+            color: #7f8c8d;
+            margin-top: 20px;
         }
 
-        /* 按鈕樣式 */
+        /* 返回按鈕樣式 */
         .btn {
             display: inline-block;
-            padding: 10px 20px;
-            margin-top: 30px;
+            padding: 12px 30px;
+            margin-top: 40px;
             background-color: #3498db;
             color: #fff;
             text-decoration: none;
@@ -83,6 +77,20 @@
         .btn:hover {
             background-color: #2980b9;
         }
+
+        /* 頁腳樣式 */
+        .footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #95a5a6;
+        }
+
+        /* 手機端樣式 */
+        @media screen and (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,18 +99,21 @@
         
         <p>請將以下金額轉到提供的錢包地址：</p>
         
-        <!-- 顯示支付金額的地方 -->
-        <p class="amount" id="paymentAmount">請支付金額</p>
+        <!-- 顯示支付金額 -->
+        <p class="amount" id="paymentAmount">正在載入...</p>
         
-        <p>地址：</p>
+        <p>錢包地址：</p>
         <!-- 顯示隨機選擇的錢包地址 -->
-        <p class="wallet" id="walletAddress"><strong>您的錢包地址將顯示在此</strong></p>
+        <p class="wallet" id="walletAddress">載入中...</p>
 
-        <p class="note">ERC20 或 BEP20 支付。</p>
+        <p class="note">請選擇 ERC20 或 BEP20 支付。</p>
         
         <p class="note">支付后請截圖並傳送給機器人以進行核查。</p>
         
-        <a href="#" class="btn">返回機器人</a>
+        <!-- 返回按鈕，點擊後跳轉到機器人 -->
+        <a href="https://t.me/feets_good_bot" class="btn" target="_blank">返回機器人</a>
+        
+        <div class="footer">感謝您的支付！</div>
     </div>
 
     <script>
@@ -128,6 +139,8 @@
         // 顯示支付金額
         if (amount) {
             document.getElementById('paymentAmount').textContent = `請支付 ${amount} USDT`; // 顯示金額
+        } else {
+            document.getElementById('paymentAmount').textContent = `金額無法載入`;
         }
 
         // 顯示隨機選擇的錢包地址
