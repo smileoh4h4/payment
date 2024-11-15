@@ -4,23 +4,107 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>支付頁面</title>
+    <style>
+        /* 基本頁面設置 */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 設置頁面內容區域 */
+        .container {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        /* 標題樣式 */
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+
+        /* 設置金額顯示區域 */
+        .amount {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* 設置錢包地址區域 */
+        .wallet {
+            font-size: 1.2em;
+            margin-top: 30px;
+            text-align: center;
+            padding: 10px;
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            word-wrap: break-word;
+        }
+
+        /* 設置支付提示 */
+        .note {
+            font-size: 1.1em;
+            margin-top: 20px;
+            color: #7f8c8d;
+            text-align: center;
+        }
+
+        /* 設置底部 */
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 1em;
+            color: #95a5a6;
+        }
+
+        /* 按鈕樣式 */
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 30px;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
-    <h1>支付頁面</h1>
-    
-    <p>請將以下金額轉到提供的錢包地址：</p>
-    
-    <!-- 顯示支付金額的地方 -->
-    <p id="paymentAmount">請支付金額</p>
-    
-    <p>地址：</p>
-    <!-- 顯示隨機選擇的錢包地址 -->
-    <p id="walletAddress"><strong>您的錢包地址將顯示在此</strong></p>
+    <div class="container">
+        <h1>支付頁面</h1>
+        
+        <p>請將以下金額轉到提供的錢包地址：</p>
+        
+        <!-- 顯示支付金額的地方 -->
+        <p class="amount" id="paymentAmount">請支付金額</p>
+        
+        <p>地址：</p>
+        <!-- 顯示隨機選擇的錢包地址 -->
+        <p class="wallet" id="walletAddress"><strong>您的錢包地址將顯示在此</strong></p>
 
-    <p>ERC20 或 BEP20 支付。</p>
-    
-    <p>支付后請截圖並傳送給機器人以進行核查。</p>
-    
+        <p class="note">ERC20 或 BEP20 支付。</p>
+        
+        <p class="note">支付后請截圖並傳送給機器人以進行核查。</p>
+        
+        <a href="#" class="btn">返回機器人</a>
+    </div>
+
     <script>
         // 定義錢包地址（每個地址都可以用於 ERC20 或 BEP20 支付）
         const walletAddresses = [
