@@ -4,11 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>支付頁面</title>
+    <script>
+        // 定義地址
+        const walletAddresses = [
+            "0x53920020fB41Be37C67410818285Ee50fB67EabC",
+            "0x95fF4f09DD3612340995E2e4EE864C8b03AA5610",
+            "0x44D6c80594e2D76dd3bb0B808f0279dbE0aCafB9",
+            "0x013d82A4438F64670041e5144A26519935ce2174",
+            "0x744d9Ec5f351F24C1Af45EFee6bfb14Ce986a8C5",
+            "0x046DE986a6f6dD9d1c86Ca22DB4E545f45b21603",
+            "0x198C9a731DBB6241Cd44CbF37DB697B620358332",
+            "0xEDcaB78CA379195f26e6D328ab820ccCFB56E935"
+        ];
+
+        // 隨機選擇一個地址
+        function getRandomAddress() {
+            const randomIndex = Math.floor(Math.random() * walletAddresses.length);
+            return walletAddresses[randomIndex];
+        }
+
+        // 設置隨機地址
+        window.onload = function() {
+            const randomAddress = getRandomAddress();
+            document.getElementById("address").innerText = randomAddress;
+        }
+    </script>
 </head>
 <body>
     <h1>請將下列地址發送您的付款</h1>
     <p>支付金額: 15 USDT</p>
-    <p>支付地址：0x53920020fB41Be37C67410818285Ee50fB67EabC</p>
+    <p>支付地址：<span id="address"></span></p>
     <p>ERC20 或 BEP20</p>
     <p>支付後請截圖並發送給機器人等待核查。</p>
 </body>
