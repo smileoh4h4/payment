@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>支付頁面</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+    .container {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    h1 {
+      color: #333;
+    }
+    p {
+      color: #555;
+      font-size: 18px;
+    }
+    .address {
+      font-size: 16px;
+      color: #333;
+      background-color: #f0f0f0;
+      padding: 10px;
+      border-radius: 5px;
+      word-wrap: break-word;
+    }
+    .amount {
+      font-size: 20px;
+      font-weight: bold;
+      margin: 20px 0;
+    }
+    .btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+    }
+    .btn:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>支付頁面</h1>
+    <p>請使用以下地址進行支付：</p>
+
+    <!-- 比特幣地址 -->
+    <div class="address">
+      <p><strong>比特幣地址：</strong><br> 1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa</p>
+    </div>
+
+    <!-- 以太坊地址 -->
+    <div class="address">
+      <p><strong>以太坊地址：</strong><br> 0x32Be343B94f860124dC4fEe278FDCBD38C102D88</p>
+    </div>
+
+    <p class="amount">支付金額：15 U</p>
+
+    <!-- 可選擇支付鏈接的按鈕 -->
+    <a class="btn" href="bitcoin:1A1zP1eP5QGefi2DMPTfTL5SLmv7DivfNa">支付比特幣</a><br><br>
+    <a class="btn" href="ethereum:0x32Be343B94f860124dC4fEe278FDCBD38C102D88">支付以太坊</a>
+    
+    <p>完成支付後，請返回並聯繫我們以確認付款。</p>
+  </div>
+</body>
+</html>
